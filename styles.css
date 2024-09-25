@@ -1,36 +1,21 @@
+html, body{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    
+}
 table{
     border: 2px solid black;
-    width: res;
     text-align: center;
-    margin: 5%;
+    width: 100%;
+    height: auto;
 }
 tr, td{
     border: 2px solid black;
 }
-/**
-* For small screens ( < 639px )
-**/
-@media screen and (max-width: 639px) {
-
+#nomMes{
+    height: 4em;
 }
-
-/**
-* For medium screens ( 640px -> 767px )
-**/
-@media screen and (min-width: 640px) and (max-width: 767px) {
-
-}
-
-/**
-* For large screens ( 768px -> 1023px )
-**/
-@media screen and (min-width: 768px) and (max-width: 1023px)  {
-
-}
-
-/**
-* For extra large screens ( >= 1024px )
-**/
-@media screen and (min-width: 1024px) {
-
+#diesSetmana{
+    height: 3em;
 }

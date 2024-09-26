@@ -1,70 +1,56 @@
-//variables
-let d = new Date();
-let diaMesActual = d.getDate();
-let mesActual = d.getMonth() + 1;
-let anyActual = d.getFullYear();
-let ultimaDiaMesActual = new Date(anyActual,mesActual + 1,0)
-const diesSetmana = [   //declaro constant perque els dies de la setmana son fixos, els faig servir en un array per 
-    "Diumenge",         //convertir el numero entre 0 i 6 que retorna la funcio getDay() en un dia de la setmana.
-    "Dilluns",
-    "Dimarts",
-    "Dimecres",
-    "Dijous",
-    "Divendres",
-    "Dissabte" ];
-let diaSetmanaActual = diesSetmana[d.getDay()];
+function $(e){ return document.getElementById(e) };
+//bucle per generar els anys al select
+for(let i = 1970; i <= 2100; i++)
+{
+    $("anySelect").innerHTML += "<option>"+ i +"</option>"
+}
 
-//funcio per modificar etiquetes del html a traves del seu id
-function $(e) { return document.getElementById(e) }
+let d = new Date();
+let numeroMesActual = d.getMonth();
+let anyActual = d.getFullYear();
+let nomMesActual = nomMes(numeroMesActual);
 
 //funcio per transformar el numero del mes en lletres
 function nomMes(mesActual) {
     switch (mesActual) {
-        case 1:
+        case 0:
             return "Gener";
             break;
-        case 2:
+        case 1:
             return "Febrer";
             break;
-        case 3:
+        case 2:
             return "Març";
             break;
-        case 4:
+        case 3:
             return "Abril";
             break;
-        case 5:
+        case 4:
             return "Maig";
             break;
-        case 6:
+        case 5:
             return "Juny";
             break;
-        case 7:
+        case 6:
             return "Juliol";
             break;
-        case 8:
+        case 7:
             return "Agost";
             break;
-        case 9:
+        case 8:
             return "Setembre";
             break;
-        case 10:
+        case 9:
             return "Octubre";
             break;
-        case 11:
+        case 10:
             return "Novembre";
             break;
-        case 12:
+        case 11:
             return "Desembre";
             break;
     }
 }
-$("nomMes").innerHTML = nomMes(mesActual);
-$("any").innerHTML = anyActual;
 
-function onCauPrimerDiaMes() {
-    
-}
-
-// while(diaMesActual <= 31 && ultimaDiaMesActual ){
-
-// }
+$("mesSelect").value = nomMesActual;
+$("anySelect").value = anyActual;

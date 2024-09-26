@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendari en JavaScript</title>
+    <title>Calendari</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,31 +12,41 @@
     <h1>Calendari</h1>
     Selecciona un mes:
     <select id="mesSelect">
-
+        <option>Gener</option>
+        <option>Febrer</option>
+        <option>Març</option>
+        <option>Abril</option>
+        <option>Maig</option>
+        <option>Juny</option>
+        <option>Juliol</option>
+        <option>Agost</option>
+        <option>Setembre</option>
+        <option>Octube</option>
+        <option>Novembre</option>
+        <option>Desembre</option>
     </select>
     Selecciona un any:
-    <select id="anySelect">
-
-    </select>
+    <select id="anySelect"></select>
     <button>←</button>
     <button>Avui</button>
     <button>→</button>
 
-    <table id="taula">
-        <tr>
-            <td id="nomMes" colspan="5"></td>
-            <td id="any" colspan="2"></td>
-        </tr>
-        <tr id="diesSetmana">
-            <td>Dilluns</td>
-            <td>Dimarts</td>
-            <td>Dimecres</td>
-            <td>Dijous</td>
-            <td>Divendres</td>
-            <td>Dissabte</td>
-            <td>Diumenge</td>
-        </tr>
-    </table>
+    <div id="principal">
+        <div id="nomMes"></div>
+        <div id="any"></div>
+        <table id="taulaDiesSetmana">
+            <tr>
+                <td>Dilluns</td>
+                <td>Dimarts</td>
+                <td>Dimecres</td>
+                <td>Dijous</td>
+                <td>Divendres</td>
+                <td>Dissabte</td>
+                <td>Diumenge</td>
+            </tr>
+        </table>
+
+    </div>
     <script src="scripts.js"></script>
 </body>
 

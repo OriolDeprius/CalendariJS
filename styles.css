@@ -1,21 +1,24 @@
 html, body{
-    margin: 0px;
     height: 100%;
-    width: 100%;
-    
 }
-table{
-    border: 2px solid black;
-    text-align: center;
+#principal{
     width: 100%;
-    height: auto;
-}
-tr, td{
-    border: 2px solid black;
+    border: 2px solid;
+    position: inherit;
+    display: block;
 }
 #nomMes{
-    height: 4em;
+    float: left;
+    border: 2px solid;
+    width: 59.6%;
 }
-#diesSetmana{
-    height: 3em;
+#any{
+    float: right;
+    border: 2px solid;
+    width: 39.9%;
+}
+#taulaDiesSetmana{
+    width: 100%;
+    text-align: center;
+    font-size: larger;
 }

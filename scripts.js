@@ -65,6 +65,6 @@ function onCauPrimerDiaMes() {
     
 }
 
-while(diaMesActual <= 31 && ultimaDiaMesActual ){
+// while(diaMesActual <= 31 && ultimaDiaMesActual ){
 
-}
+// }

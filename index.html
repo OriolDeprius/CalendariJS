@@ -10,26 +10,28 @@
 
 <body>
     <h1>Calendari</h1>
-    <p class="textSelect">Selecciona un mes:</p>
-    <select id="mesSelect">
-        <option>Gener</option>
-        <option>Febrer</option>
-        <option>Març</option>
-        <option>Abril</option>
-        <option>Maig</option>
-        <option>Juny</option>
-        <option>Juliol</option>
-        <option>Agost</option>
-        <option>Setembre</option>
-        <option>Octube</option>
-        <option>Novembre</option>
-        <option>Desembre</option>
-    </select>
-    <p class="textSelect">Selecciona un any:</p>
-    <select id="anySelect"></select>
-    <button class="btnNavegacioMesos">←</button>
-    <button class="btnNavegacioMesos">Avui</button>
-    <button class="btnNavegacioMesos">→</button>
+    <div class="navegacio">
+        <p class="textSelect">Selecciona un mes:</p>
+        <select id="mesSelect">
+            <option>Gener</option>
+            <option>Febrer</option>
+            <option>Març</option>
+            <option>Abril</option>
+            <option>Maig</option>
+            <option>Juny</option>
+            <option>Juliol</option>
+            <option>Agost</option>
+            <option>Setembre</option>
+            <option>Octube</option>
+            <option>Novembre</option>
+            <option>Desembre</option>
+        </select>
+        <p class="textSelect">Selecciona un any:</p>
+        <select id="anySelect"></select>
+        <button id="btnEsquerra" class="btnNavegacioMesos">←</button>
+        <button id="btnAvui" class="btnNavegacioMesos">Avui</button>
+        <button id="btnDreta" class="btnNavegacioMesos">→</button>
+    </div>
 
     <div id="principal">
         <div id="nomMes"></div>
@@ -45,7 +47,9 @@
                 <td>Diumenge</td>
             </tr>
         </table>
+        <div id="calendari" class="calendari">
 
+        </div>
     </div>
     <script src="scripts.js"></script>
 </body>

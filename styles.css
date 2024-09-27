@@ -1,21 +1,25 @@
 html,
 body {
     height: 100%;
-    text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-image: linear-gradient(aqua, lightblue, cornflowerblue);
+    background-image: linear-gradient(lightblue,aqua, cornflowerblue);
+}
+h1{
+    text-align: center;
 }
 
 #principal {
-    width: 100%;
+    width: 80%;
     border: 2px solid;
     display: block;
     margin-top: 2em;
     overflow: hidden;
     border-radius: 20px;
+    margin-left: 10%;
 }
 
 #nomMes {
+    text-align: center;
     float: left;
     padding-top: 8px;
     width: 60%;
@@ -27,6 +31,7 @@ body {
 }
 
 #any {
+    text-align: center;
     float: right;
     padding-top: 8px;
     width: 40%;
@@ -35,6 +40,7 @@ body {
 }
 
 #taulaDiesSetmana {
+    text-align: center;
     width: 100%;
     font-size: larger;
     border-top: 1px solid;
@@ -43,18 +49,25 @@ body {
 }
 
 td {
+    text-align: center;
     width: calc(100% / 7);
     border: 1px solid;
     padding: 7px;
 }
-
+.navegacio{
+    width: 100%;
+    text-align: center;
+}
 .textSelect {
+    text-align: center;
     display: inline;
     font-size: larger;
     margin-left: 20px;
 }
 
 .btnNavegacioMesos {
+    align-items: center;
+    text-align: center;
     width: 80px;
     height: 30px;
     font-size: large;
@@ -66,6 +79,8 @@ td {
 }
 
 select {
+    align-items: center;
+    text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 120px;
     height: 30px;
@@ -75,4 +90,20 @@ select {
     opacity: 60%;
     border-radius: 20px;
     text-align: center;
+}
+.calendari{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.diesCalendari{
+    box-sizing: border-box;
+    text-align: center;
+    display: inline-block;
+    width: calc(100% / 7);
+    overflow: hidden;
+    height: 110px;
+    border: 1px solid;
+    align-content: center;
+    border-radius: 20px;
 }

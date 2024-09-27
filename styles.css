@@ -1,24 +1,78 @@
-html, body{
+html,
+body {
     height: 100%;
-}
-#principal{
-    width: 100%;
-    border: 2px solid;
-    position: inherit;
-    display: block;
-}
-#nomMes{
-    float: left;
-    border: 2px solid;
-    width: 59.6%;
-}
-#any{
-    float: right;
-    border: 2px solid;
-    width: 39.9%;
-}
-#taulaDiesSetmana{
-    width: 100%;
     text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(aqua, lightblue, cornflowerblue);
+}
+
+#principal {
+    width: 100%;
+    border: 2px solid;
+    display: block;
+    margin-top: 2em;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+#nomMes {
+    float: left;
+    padding-top: 8px;
+    width: 60%;
+    font-size: 24px;
+    text-align: center;
+    border-right: 1px solid;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+}
+
+#any {
+    float: right;
+    padding-top: 8px;
+    width: 40%;
+    font-size: 24px;
+    text-align: center;
+}
+
+#taulaDiesSetmana {
+    width: 100%;
     font-size: larger;
+    border-top: 1px solid;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    width: calc(100% / 7);
+    border: 1px solid;
+    padding: 7px;
+}
+
+.textSelect {
+    display: inline;
+    font-size: larger;
+    margin-left: 20px;
+}
+
+.btnNavegacioMesos {
+    width: 80px;
+    height: 30px;
+    font-size: large;
+    margin-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: cornflowerblue;
+    opacity: 60%;
+    border-radius: 20px;
+}
+
+select {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 120px;
+    height: 30px;
+    font-size: large;
+    margin-left: 20px;
+    background-color: cornflowerblue;
+    opacity: 60%;
+    border-radius: 20px;
+    text-align: center;
 }

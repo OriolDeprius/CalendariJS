@@ -10,6 +10,12 @@ let numeroMesActual = d.getMonth();
 let anyActual = d.getFullYear();
 let nomMesActual = nomMes(numeroMesActual);
 
+$("mesSelect").value = nomMesActual;
+$("anySelect").value = anyActual;
+
+$("nomMes").innerHTML = $("mesSelect").value;
+$("any").innerHTML = $("anySelect").value;
+
 //funcio per transformar el numero del mes en lletres
 function nomMes(mesActual) {
     switch (mesActual) {
@@ -51,6 +57,3 @@ function nomMes(mesActual) {
             break;
     }
 }
-
-$("mesSelect").value = nomMesActual;
-$("anySelect").value = anyActual;

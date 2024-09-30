@@ -42,6 +42,7 @@ function clickAvui() {
     selectsActual();
     canviarMesRespecteSelect();
     canviarAnyRespecteSelect();
+    pintarCalendari(anyActual, mesActual);
 }
 
 // function clickBtnEsquerra(){
@@ -52,19 +53,34 @@ function pintarCalendari(any, mes){
     let d = new Date(any, mes, 1);
     let dia1Mes = d.getDay();
     let ultimDiaMes = new Date (any, mes + 1, 0).getDate();
+    let avui = new Date();
     let calendari = $("calendari");
+    // let festius = [
+    //     "_11s" = new Date(any, 8, 11),
+    //     "nadal" = new Date(any, 11, 25)
+    // ];
 
     if (dia1Mes == 0){
         dia1Mes = 7;
     }
-
+    //bucle per omplir amb espais buits fins al primer dia de mes
     for(let i = 1; i < dia1Mes; i++){
         calendari.innerHTML += "<div class='diesCalendari'>&nbsp;</div>";
     }
-    for(let i = 1; i <= ultimDiaMes; i++ ){
-        calendari.innerHTML += "<div class='diesCalendari'>"+ i +"</div>";
+    //bucle per omplir els espais amb els dies del mes
+    let cont = 1;
+    while (cont <= ultimDiaMes){
+        if(d.getDay() == 0){
+            calendari.innerHTML += "<div class='diesCalendari' style='color: red;'>"+ cont +"</div>";
+        }
+        else
+        calendari.innerHTML += "<div class='diesCalendari'>"+ cont +"</div>";
+        cont++;
+        d.setDate(cont);
     }
+    
 }
+
 
 //funcio per transformar el numero del mes en lletres
 function nomMes(mesActual) {

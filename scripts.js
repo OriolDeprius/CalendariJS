@@ -1,19 +1,17 @@
 function $(e) { return document.getElementById(e) };
-//bucle per generar els anys al select
 
 let d = new Date();
 let numeroMesActual = d.getMonth();
 let anyActual = d.getFullYear();
 let nomMesActual = nomMes(numeroMesActual);
-setInterval(canviarColor, 1000);
+let a;
 
+//bucle per generar els anys al select
 for (let i = 1970; i <= 2100; i++) {
   $("anySelect").innerHTML += "<option>" + i + "</option>"
 }
 
 selectsActual();
-
-pintarCalendari(anyActual, numeroMesActual);
 
 //quan canvia el valor del select del mes canvia el mes pintat al calendari
 $("mesSelect").onchange = canviarMesRespecteSelect;
@@ -50,8 +48,10 @@ function clickAvui() {
   canviarMesRespecteSelect();
   canviarAnyRespecteSelect();
   pintarCalendari(anyActual, numeroMesActual);
+  nomMes(numeroMesActual);
 }
 
+//funcionalitat boto per correr els mesos enrere
 function clickBtnEsquerra() {
   let mes = numeroMes($("mesSelect").value) - 1;
   let any = $("anySelect").value;
@@ -68,6 +68,7 @@ function clickBtnEsquerra() {
   pintarCalendari(any, mes);
 }
 
+//funcionalitat boto per correr els mesos endevant
 function clickBtnDreta() {
   let mes = numeroMes($("mesSelect").value) + 1;
   let any = $("anySelect").value;
@@ -91,13 +92,6 @@ function pintarCalendari(any, mes) {
   let avui = new Date();
   let calendari = $("calendari");
   let cont = 1;
-  let festius = new Map()
-  festius.set("s11", new Date(any, 8, 11));
-  festius.set("nadal", new Date(any, 11, 25));
-
-  for (let [key, value] of festius) {
-    console.log(key + " es " + value)
-  }
 
   calendari.innerHTML = "";
 
@@ -110,63 +104,80 @@ function pintarCalendari(any, mes) {
   }
   //bucle per omplir els espais amb els dies del mes
   while (cont <= ultimDiaMes) {
-    if (d.getDay() == 0 || d == festius.get("s11") || d == festius.get("nadal")) {
+    if (d.getDay() == 0) {
       calendari.innerHTML += "<div class='diesCalendari' style='color: red;'>" + cont + "</div>";
-      console.log(d);
     }
     else if (d.getFullYear() == avui.getFullYear() && d.getMonth() == avui.getMonth() && d.getDate() == avui.getDate()) {
       calendari.innerHTML += "<div class='diesCalendari' id='diaActual' style='background-color: khaki;'>" + cont + "</div>";
     }
-    else {
+    else if (d.getDay() != 0){
       calendari.innerHTML += "<div class='diesCalendari'>" + cont + "</div>";
     }
+
     cont++;
     d.setDate(cont);
   }
 
+  if (d.getFullYear() == avui.getFullYear() && d.getMonth() - 1 == avui.getMonth()){
+    clearInterval(a);
+    a = setInterval(canviarColor, 1000);
+  }
 }
 
 function canviarColor() {
-  $("diaActual").style.backgroundColor = $("diaActual").style.backgroundColor == "khaki" ? "yellow" : "khaki";
+  if ($("diaActual"))
+    $("diaActual").style.backgroundColor = $("diaActual").style.backgroundColor == "khaki" ? "yellow" : "khaki";
 }
 
 //funcio per transformar el numero del mes en lletres
 function nomMes(mesActual) {
   switch (mesActual) {
     case 0:
+      $("cos").style.backgroundImage = "url('resources/gener.png')";
       return "Gener";
       break;
     case 1:
+      $("cos").style.backgroundImage = "url('resources/febrer.png')";
       return "Febrer";
       break;
     case 2:
+      $("cos").style.backgroundImage = "url('resources/març.png')";
       return "Març";
       break;
     case 3:
+      $("cos").style.backgroundImage = "url('resources/abril.png')";
       return "Abril";
       break;
     case 4:
+      $("cos").style.backgroundImage = "url('resources/maig.png')";
       return "Maig";
       break;
     case 5:
+      $("cos").style.backgroundImage = "url('resources/juny.png')";
       return "Juny";
       break;
     case 6:
+      $("cos").style.backgroundImage = "url('resources/juliol.png')";
       return "Juliol";
       break;
     case 7:
+      $("cos").style.backgroundImage = "url('resources/agost.png')";
       return "Agost";
       break;
     case 8:
+      $("cos").style.backgroundImage = "url('resources/setembre.png')";
       return "Setembre";
       break;
     case 9:
+      $("cos").style.backgroundImage = "url('resources/octubre.png')";
       return "Octubre";
       break;
     case 10:
+      $("cos").style.backgroundImage = "url('resources/novembre.png')";
       return "Novembre";
       break;
     case 11:
+      $("cos").style.backgroundImage = "url('resources/desembre.png')";
       return "Desembre";
       break;
   }

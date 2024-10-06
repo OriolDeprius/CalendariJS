@@ -105,7 +105,10 @@ function pintarCalendari(any, mes) {
   //bucle per omplir els espais amb els dies del mes
   while (cont <= ultimDiaMes) {
     if (d.getDay() == 0) {
-      calendari.innerHTML += "<div class='diesCalendari' style='color: red;'>" + cont + "</div>";
+      if (d.getFullYear() == avui.getFullYear() && d.getMonth() == avui.getMonth() && d.getDate() == avui.getDate()) 
+        calendari.innerHTML += "<div class='diesCalendari' id='diaActual' style='background-color: khaki; color: red;'>" + cont + "</div>";
+      else
+        calendari.innerHTML += "<div class='diesCalendari' style='color: red;'>" + cont + "</div>";
     }
     else if (d.getFullYear() == avui.getFullYear() && d.getMonth() == avui.getMonth() && d.getDate() == avui.getDate()) {
       calendari.innerHTML += "<div class='diesCalendari' id='diaActual' style='background-color: khaki;'>" + cont + "</div>";
